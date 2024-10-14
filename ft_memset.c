@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:09:24 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 17:29:21 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/14 14:07:22 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/14 17:30:18 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_memset(void *ptr, int value, int num)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
-}
+	int i;
+	unsigned char *p;
 
-/*
-int	main(void)
-{
-	char	test1;
-	char	test2;
+	p = (unsigned char *)ptr;
 
-	test1 = 'A';
-	test2 = 'z';
-	printf("Is '%c' alphabetic? %d\n", test1, ft_isalpha(test1));
-	printf("Is '%c' alphabetic? %d\n", test2, ft_isalpha(test2));
-	return (0);
+	i = 0;
+	while (i < num)
+	{
+		p[i] = (unsigned char)value;
+		i++;
+	}
+
+	return (ptr);
 }
-*/

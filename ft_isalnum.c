@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:09:24 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 17:29:21 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/14 13:00:45 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/14 17:29:23 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a'
+			&& c <= 'z'));
 }
 
 /*
 int	main(void)
 {
-	char	test1;
-	char	test2;
+	int	isalnum;
 
-	test1 = 'A';
-	test2 = 'z';
-	printf("Is '%c' alphabetic? %d\n", test1, ft_isalpha(test1));
-	printf("Is '%c' alphabetic? %d\n", test2, ft_isalpha(test2));
+	for (int i = 0; i < 255; i ++)
+	{
+		isalnum = ft_isalnum(i);
+		printf("char: %c, int: %d, is alnum: %d\n", (char)i, i, isalnum);
+	}
 	return (0);
 }
 */

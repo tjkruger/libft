@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:09:24 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 17:29:21 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/14 14:23:59 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/14 17:29:25 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_bzero(void *s, int len)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)s;
+	while (len-- > 0)
+	{
+		*ptr++ = 0;
+	}
 }
 
 /*
-int	main(void)
-{
-	char	test1;
-	char	test2;
+int	main(void) {
 
-	test1 = 'A';
-	test2 = 'z';
-	printf("Is '%c' alphabetic? %d\n", test1, ft_isalpha(test1));
-	printf("Is '%c' alphabetic? %d\n", test2, ft_isalpha(test2));
+	int array[5];
+
+	bzero(array, sizeof(array));
+	printf("Contents of the array after bzero:\n");
+
+	for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++)
+	{
+		printf("array[%d] = %d\n", i, array[i]);
+	}
+
 	return (0);
 }
 */

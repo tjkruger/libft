@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:09:24 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 17:29:21 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/14 17:15:14 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/14 17:31:12 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_isalpha(int c)
-{
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
-}
+# include <stddef.h>
+# include <stdio.h>
 
-/*
-int	main(void)
-{
-	char	test1;
-	char	test2;
+void	*ft_memset(void *ptr, int value, int num);
+int		ft_strlen(const char *str);
+int		ft_isprint(int c);
+int		ft_isdigit(int c);
+int		ft_isascii(int c);
+int		ft_isalpha(int c);
+int		ft_isalnum(int c);
 
-	test1 = 'A';
-	test2 = 'z';
-	printf("Is '%c' alphabetic? %d\n", test1, ft_isalpha(test1));
-	printf("Is '%c' alphabetic? %d\n", test2, ft_isalpha(test2));
-	return (0);
-}
-*/
+void	ft_bzero(void *s, int len);
+
+#endif

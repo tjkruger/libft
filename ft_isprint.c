@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:09:24 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 17:29:21 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/14 13:40:16 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/14 17:29:11 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isprint(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	return (c >= 32 && c <= 126);
 }
 
 /*
 int	main(void)
 {
-	char	test1;
-	char	test2;
+	int	isprint;
 
-	test1 = 'A';
-	test2 = 'z';
-	printf("Is '%c' alphabetic? %d\n", test1, ft_isalpha(test1));
-	printf("Is '%c' alphabetic? %d\n", test2, ft_isalpha(test2));
+	for (int i = 0; i < 255; i ++)
+	{
+		isprint = ft_isprint(i);
+		printf("char: %c, int: %d, is alnum: %d\n", (char)i, i, isprint);
+	}
 	return (0);
 }
 */
