@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:00:45 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 20:09:14 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/14 18:36:45 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/14 18:46:39 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-int	ft_isalnum(int c)
+void	*my_memcpy(void *dest, const void *src, unsigned int n)
 {
-	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a'
-			&& c <= 'z'));
-}
+	int		i;
+	char	*cdest;
+	char	*csrc;
 
+	csrc = (char *)src;
+	cdest = (char *)dest;
+	i = 0;
+	for (unsigned int i = 0; i < n; i++)
+	{
+		cdest[i] = csrc[i];
+	}
+	return (dest);
+}
 /*
 int	main(void)
 {
-	int	isalnum;
+	char	src[] = "Hello, World!";
+	char	dest[50];
 
-	for (int i = 0; i < 255; i ++)
-	{
-		isalnum = ft_isalnum(i);
-		printf("char: %c, int: %d, is alnum: %d\n", (char)i, i, isalnum);
-	}
+	// Using my_memcpy function to copy the string
+	my_memcpy(dest, src, sizeof(src));
+	printf("Copied string: %s\n", dest);
 	return (0);
 }
 */

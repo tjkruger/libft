@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:15:14 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 17:31:12 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:35:59 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		ft_isdigit(int c);
 int		ft_isascii(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
-
 void	ft_bzero(void *s, int len);
 
 #endif

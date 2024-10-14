@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:00:45 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 20:09:14 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/14 20:07:23 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/14 20:12:59 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-int	ft_isalnum(int c)
+unsigned int	my_strlcpy(char *dest, const char *src, unsigned int dstsize)
 {
-	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a'
-			&& c <= 'z'));
-}
+	unsigned int	src_len;
 
-/*
-int	main(void)
-{
-	int	isalnum;
-
-	for (int i = 0; i < 255; i ++)
+	src_len = 0;
+	if (dstsize > 0)
 	{
-		isalnum = ft_isalnum(i);
-		printf("char: %c, int: %d, is alnum: %d\n", (char)i, i, isalnum);
+		while (src[src_len] != '\0' && src_len < dstsize - 1)
+		{
+			dest[src_len] = src[src_len];
+			src_len++;
+		}
+		dest[src_len] = '\0';
 	}
-	return (0);
+	while (src[src_len] != '\0')
+	{
+		src_len++;
+	}
+	return (src_len);
 }
-*/
