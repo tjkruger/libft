@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 18:36:45 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/21 13:17:57 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/15 13:32:11 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/21 16:36:17 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, int n)
 {
-	unsigned int	i;
-	char			*cdest;
-	char			*csrc;
-
-	csrc = (char *)src;
-	cdest = (char *)dest;
-	i = 0;
-	while (i < n)
+	if (n <= 0)
+		return (0);
+	while (n > 0)
 	{
-		cdest[i] = csrc[i];
-		i++;
+		if (*s1 == '\0' || *s2 == '\0')
+		{
+			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+		}
+		if (*s1 != *s2)
+		{
+			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+		}
+		s1++;
+		s2++;
+		n--;
 	}
-	return (dest);
-}
-/*
-int	main(void)
-{
-	char	src[] = "Hello, World!";
-	char	dest[50];
-
-	// Using my_memcpy function to copy the string
-	my_memcpy(dest, src, sizeof(src));
-	printf("Copied string: %s\n", dest);
 	return (0);
 }
-*/

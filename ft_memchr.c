@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 18:36:45 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/21 13:17:57 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/15 13:42:53 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/15 16:08:53 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+void	*ft_memchr(const void *s, int c, int n)
 {
-	unsigned int	i;
-	char			*cdest;
-	char			*csrc;
+	unsigned char		target;
+	const unsigned char	*ptr;
+	int					i;
 
-	csrc = (char *)src;
-	cdest = (char *)dest;
 	i = 0;
+	ptr = s;
+	target = (unsigned char)c;
 	while (i < n)
 	{
-		cdest[i] = csrc[i];
+		if (ptr[i] == target)
+		{
+			return ((void *)&ptr[i]);
+		}
 		i++;
 	}
-	return (dest);
-}
-/*
-int	main(void)
-{
-	char	src[] = "Hello, World!";
-	char	dest[50];
-
-	// Using my_memcpy function to copy the string
-	my_memcpy(dest, src, sizeof(src));
-	printf("Copied string: %s\n", dest);
 	return (0);
 }
-*/

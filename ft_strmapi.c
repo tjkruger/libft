@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 18:36:45 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/21 13:17:57 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/20 15:35:07 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/20 17:00:47 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <libft.h>
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char			*result;
 	unsigned int	i;
-	char			*cdest;
-	char			*csrc;
 
-	csrc = (char *)src;
-	cdest = (char *)dest;
-	i = 0;
-	while (i < n)
+	if (s == NULL || f == NULL)
 	{
-		cdest[i] = csrc[i];
+		return (NULL);
+	}
+	result = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (result == NULL)
+	{
+		return (NULL);
+	}
+	i = 0;
+	while (s[i] != '\0')
+	{
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	return (dest);
+	result[i] = '\0';
+	return (result);
 }
-/*
-int	main(void)
-{
-	char	src[] = "Hello, World!";
-	char	dest[50];
-
-	// Using my_memcpy function to copy the string
-	my_memcpy(dest, src, sizeof(src));
-	printf("Copied string: %s\n", dest);
-	return (0);
-}
-*/

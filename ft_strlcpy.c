@@ -6,13 +6,13 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 20:07:23 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 20:12:59 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/14 20:34:39 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-unsigned int	my_strlcpy(char *dest, const char *src, unsigned int dstsize)
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int dstsize)
 {
 	unsigned int	src_len;
 

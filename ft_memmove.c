@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:54:06 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 19:05:04 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/14 20:21:02 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	copy_forward(char *dest, const char *src, unsigned int n)
 	}
 }
 
-void	*my_memmove(void *dest, const void *src, unsigned int n)
+void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
 	char		*d;
 	const char	*s;

@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 18:36:45 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/21 13:17:57 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/17 12:21:39 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/20 15:37:34 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+void	*ft_calloc(int num, int size)
 {
-	unsigned int	i;
-	char			*cdest;
-	char			*csrc;
+	int				total_size;
+	unsigned char	*counter;
+	int				i;
+	void			*ptr;
 
-	csrc = (char *)src;
-	cdest = (char *)dest;
 	i = 0;
-	while (i < n)
+	total_size = num * size;
+	if (size != 0 && total_size / size != num)
 	{
-		cdest[i] = csrc[i];
+		return (0);
+	}
+	ptr = malloc(total_size);
+	if (!ptr)
+	{
+		return (0);
+	}
+	counter = (unsigned char *)ptr;
+	while (i < total_size)
+	{
+		counter[i] = 0;
 		i++;
 	}
-	return (dest);
+	return (ptr);
 }
-/*
-int	main(void)
-{
-	char	src[] = "Hello, World!";
-	char	dest[50];
-
-	// Using my_memcpy function to copy the string
-	my_memcpy(dest, src, sizeof(src));
-	printf("Copied string: %s\n", dest);
-	return (0);
-}
-*/

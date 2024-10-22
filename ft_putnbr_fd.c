@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 14:07:22 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/15 16:10:51 by tjkruger         ###   ########.fr       */
+/*   Created: 2024/10/20 17:17:35 by tjkruger          #+#    #+#             */
+/*   Updated: 2024/10/21 12:54:47 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void	*ft_memset(void *ptr, int value, int num)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int				i;
-	unsigned char	*p;
+	char	*str;
 
-	p = (unsigned char *)ptr;
-	i = 0;
-	while (i < num)
+	str = ft_itoa(n);
+	if (str == NULL)
+		return ;
+	if (str != NULL)
 	{
-		p[i] = (unsigned char)value;
-		i++;
+		write(fd, str, ft_strlen(str));
+		free(str);
 	}
-	return (ptr);
 }
