@@ -6,15 +6,17 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 13:32:11 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/21 16:36:17 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:02:47 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, int n)
 {
-	if (n <= 0)
+	if (n < 0)
+		return (-1);
+	if (n == 0)
 		return (0);
 	while (n > 0)
 	{

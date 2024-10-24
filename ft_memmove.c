@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:54:06 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/14 20:21:02 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/22 14:14:50 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	*ft_memmove(void *dest, const void *src, unsigned int n)
 
 	d = (char *)dest;
 	s = (const char *)src;
+	if (d == NULL && s == NULL)
+		return (NULL);
 	if (s < d && (s + n) > d)
 	{
 		copy_backward(d, s, n);

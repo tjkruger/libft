@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 13:11:24 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/21 13:23:55 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:02:36 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	const char	*last_occurrence;
+	char		ch;
 
 	last_occurrence = NULL;
+	ch = (char)c;
 	while (*str)
 	{
-		if (*str == (char)c)
+		if (*str == ch)
+		{
 			last_occurrence = str;
+		}
 		str++;
 	}
-	if (c == '\0')
+	if (ch == '\0')
 	{
 		return ((char *)str);
 	}

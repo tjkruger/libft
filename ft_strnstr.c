@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 15:11:07 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/15 15:42:35 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/22 14:41:18 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,14 @@ char	*ft_strnstr(const char *mstr, const char *sstr, int len)
 
 	i = 0;
 	if (!*sstr)
-	{
 		return ((char *)mstr);
-	}
-	while (mstr[i] && i < len)
+	while (mstr[i] && (len < 0 || i < len))
 	{
 		j = 0;
-		while (sstr[j] && mstr[i + j] == sstr[j] && (i + j) < len)
-		{
+		while (sstr[j] && mstr[i + j] == sstr[j] && (len < 0 || (i + j) < len))
 			j++;
-		}
 		if (!sstr[j])
-		{
 			return ((char *)&mstr[i]);
-		}
 		i++;
 	}
 	return (0);
