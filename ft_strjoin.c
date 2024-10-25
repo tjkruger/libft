@@ -6,7 +6,7 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 12:27:18 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/18 14:19:19 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/24 14:37:52 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	new_str = (char *)malloc(ft_combined_strlen(s1, s2));
 	if (!new_str)
-	{
 		return (NULL);
-	}
 	ft_strcopy(new_str, s1, s2);
 	return (new_str);
 }

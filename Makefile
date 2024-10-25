@@ -34,14 +34,17 @@ SRCSLIBFT = ft_bzero.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
 
+BONUSSRCS = ft_lstnew.c \
 
 
 SRC		= $(SRCSLIBFT)
+BONUS	= $(SRCSLIBFT) $(BONUSSRCS)
+
 OBJ		= $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
+BONUSOBJ = $(addprefix $(OBJDIR)/, $(BONUSSRCS:.c=.o))
+
 OBJDIR	= obj
-
-HEADER = libft.h
-
+HEADER  = libft.h
 NAME	= libft.a
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
@@ -52,6 +55,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
+
+bonus: $(NAME) $(BONUSOBJ)
+	ar -rcs $(NAME) $(BONUSOBJ)
 
 $(OBJDIR)/%.o: %.c $(HEADER) | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@ -I .
