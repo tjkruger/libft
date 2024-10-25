@@ -6,11 +6,11 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:35:07 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/20 17:00:47 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:53:27 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

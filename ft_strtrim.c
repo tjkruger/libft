@@ -6,11 +6,11 @@
 /*   By: tjkruger <tjkruger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:31:06 by tjkruger          #+#    #+#             */
-/*   Updated: 2024/10/18 17:24:53 by tjkruger         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:52:43 by tjkruger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
